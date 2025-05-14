@@ -33,7 +33,7 @@ class StarCrm
 
         // We can interact either as an authenticated user, or as an application itself
         // We first look for a token that's been provided (appApi()), then in the session (user), and lastly config (app env variable)
-        $token = $apiTokenOverride ?? session('access_token') ?? config('star.token');
+        $token = $apiTokenOverride ?? session('access_token') ?? config('crm.token') ?? config('star.token');
 
         $headers = $this->headers;
 
